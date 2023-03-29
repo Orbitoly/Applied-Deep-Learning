@@ -11,6 +11,7 @@ def gradient_descent(X, y, theta, alpha, iterations):
     return theta
 
 diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
+
 print(diabetes_X.shape)
 
 
