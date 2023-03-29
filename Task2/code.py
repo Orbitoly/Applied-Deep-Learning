@@ -1,7 +1,8 @@
 from sklearn import datasets
 import numpy as np
 import matplotlib.pyplot as plt
-
+#seed
+np.random.seed(1)
 def target(x, A, b):
     return A.T @ A @ x - A.T @ b
 
@@ -28,7 +29,7 @@ def test_task1():
     x, errors = gradient_descent_1(A, x0, b, epsilon=0.1, delta=1e-5)
     
     # plot errors and show
-    plt.plot(errors[:100])
+    plt.plot(errors[:50])
     plt.xlabel('Iteration')
     plt.ylabel('Error')
     plt.title('Task 1: Error vs Iteration')
@@ -65,9 +66,9 @@ def test_task2():
     
     # plot errors and show
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
-    ax1.plot(error_train[:100])
+    ax1.plot(error_train[:50])
     ax1.set_title('Train Errors')
-    ax2.plot(error_test[:100])
+    ax2.plot(error_test[:50])
     ax2.set_title('Test Errors')
     fig.suptitle('Task 2: Errors Functions')
     plt.show()
@@ -100,11 +101,11 @@ def test_task3():
 
     # plot errors and show
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
-    ax1.plot(error_train_avg[:100])
+    ax1.plot(error_train_avg[:50])
     ax1.set_title('Train Errors')
-    ax2.plot(error_test_avg[:100])
+    ax2.plot(error_test_avg[:50])
     ax2.set_title('Test Errors')
     fig.suptitle('Task 3: Errors Functions')
     plt.show()
 
-test_task3()
+test_task1()
