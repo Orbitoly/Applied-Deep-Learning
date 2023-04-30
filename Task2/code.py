@@ -92,6 +92,8 @@ def test_task3():
 
     #split the data randomly 10 times, and calculate the average
     for i in range(n-1):
+        X_train, y_train, X_test, y_test = split_data_random(diabetes_X, diabetes_y, ratio=0.2)
+
         x, error_train, error_test = gradient_descent_2(x0, X_train, y_train, X_test, y_test, epsilon=0.1, delta=1e-5)
         error_train_avg = error_train_avg + error_train
         error_test_avg = error_test_avg + error_test
@@ -108,4 +110,4 @@ def test_task3():
     fig.suptitle('Task 3: Errors Functions')
     plt.show()
 
-test_task1()
+test_task3()

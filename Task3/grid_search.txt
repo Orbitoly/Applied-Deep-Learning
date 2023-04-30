@@ -1,0 +1,180 @@
+Params finished:  [3, 0.001, 10]
+Minimum validation error for params:  0.0007155829772353173
+Test error for minimum validation error:  0.0006628104746341705
+Params finished:  [3, 0.001, 100]
+Minimum validation error for params:  0.0007927218198776245
+Test error for minimum validation error:  0.0007168424278497696
+Params finished:  [3, 0.001, 500]
+Minimum validation error for params:  0.0009228729128837585
+Test error for minimum validation error:  0.0008054238021373748
+Params finished:  [3, 0.001, 1000]
+Minimum validation error for params:  0.0010740536019206047
+Test error for minimum validation error:  0.0009623161099851131
+Params finished:  [3, 0.01, 10]
+Minimum validation error for params:  0.0011396726131439208
+Test error for minimum validation error:  0.0011414429679512978
+Params finished:  [3, 0.01, 100]
+Minimum validation error for params:  0.0011596386194229126
+Test error for minimum validation error:  0.0011294427551329137
+Params finished:  [3, 0.01, 500]
+Minimum validation error for params:  0.0013690057903528213
+Test error for minimum validation error:  0.00144535044580698
+Params finished:  [3, 0.01, 1000]
+Minimum validation error for params:  0.001383247584104538
+Test error for minimum validation error:  0.0015187420830130578
+Params finished:  [3, 0.1, 10]
+Minimum validation error for params:  0.0018096819639205934
+Test error for minimum validation error:  0.0018759233459830285
+Params finished:  [3, 0.1, 100]
+Minimum validation error for params:  0.0016629517048597335
+Test error for minimum validation error:  0.0016916801556944847
+Params finished:  [3, 0.1, 500]
+Minimum validation error for params:  0.002015460893511772
+Test error for minimum validation error:  0.001770985944569111
+Params finished:  [3, 0.1, 1000]
+Minimum validation error for params:  0.0022214929521083833
+Test error for minimum validation error:  0.0018202143594622613
+Params finished:  [20, 0.001, 10]
+Minimum validation error for params:  0.0020639017909765242
+Test error for minimum validation error:  0.0019211761817336083
+Params finished:  [20, 0.001, 100]
+Minimum validation error for params:  0.0021767378091812136
+Test error for minimum validation error:  0.0021345016077160836
+Params finished:  [20, 0.001, 500]
+Minimum validation error for params:  0.0022338112354278565
+Test error for minimum validation error:  0.0020702485278248786
+Params finished:  [20, 0.001, 1000]
+Minimum validation error for params:  0.002446782037615776
+Test error for minimum validation error:  0.0021009808614850045
+Params finished:  [20, 0.01, 10]
+Minimum validation error for params:  0.0027558270543813707
+Test error for minimum validation error:  0.0022848839223384857
+Params finished:  [20, 0.01, 100]
+Minimum validation error for params:  0.002883988758921623
+Test error for minimum validation error:  0.002492219761013985
+Params finished:  [20, 0.01, 500]
+Minimum validation error for params:  0.00317913099527359
+Test error for minimum validation error:  0.002732829451560974
+Params finished:  [20, 0.01, 1000]
+Minimum validation error for params:  0.003183693262934685
+Test error for minimum validation error:  0.0028970298737287523
+Params finished:  [20, 0.1, 10]
+Minimum validation error for params:  0.0027621290177106857
+Test error for minimum validation error:  0.0026856528647243977
+Params finished:  [20, 0.1, 100]
+Minimum validation error for params:  0.0029376018643379213
+Test error for minimum validation error:  0.002604505477845669
+Params finished:  [20, 0.1, 500]
+Minimum validation error for params:  0.004044559246301651
+Test error for minimum validation error:  0.0034564656361937523
+Params finished:  [20, 0.1, 1000]
+Minimum validation error for params:  0.0038974866539239882
+Test error for minimum validation error:  0.003797746729850769
+Params finished:  [100, 0.001, 10]
+Minimum validation error for params:  0.0031606236696243286
+Test error for minimum validation error:  0.0030899767488241194
+Params finished:  [100, 0.001, 100]
+Minimum validation error for params:  0.0034021232426166533
+Test error for minimum validation error:  0.0030671767510473727
+Params finished:  [100, 0.001, 500]
+Minimum validation error for params:  0.00379904759824276
+Test error for minimum validation error:  0.003490017908811569
+Params finished:  [100, 0.001, 1000]
+Minimum validation error for params:  0.0035777109503746032
+Test error for minimum validation error:  0.0032776962071657183
+Params finished:  [100, 0.01, 10]
+Minimum validation error for params:  0.0037122445181012155
+Test error for minimum validation error:  0.0037506613552570345
+Params finished:  [100, 0.01, 100]
+Minimum validation error for params:  0.0042560289561748505
+Test error for minimum validation error:  0.004106207343935966
+Params finished:  [100, 0.01, 500]
+Minimum validation error for params:  0.0042022422373294835
+Test error for minimum validation error:  0.004251084885001182
+Params finished:  [100, 0.01, 1000]
+Minimum validation error for params:  0.004400262722373009
+Test error for minimum validation error:  0.003924456882476807
+Params finished:  [100, 0.1, 10]
+Minimum validation error for params:  0.004015611588954925
+Test error for minimum validation error:  0.003953089866042137
+Params finished:  [100, 0.1, 100]
+Minimum validation error for params:  0.0041090857714414595
+Test error for minimum validation error:  0.004279275511205196
+Params finished:  [100, 0.1, 500]
+Minimum validation error for params:  0.004835204982757568
+Test error for minimum validation error:  0.004332437148690224
+Params finished:  [100, 0.1, 1000]
+Minimum validation error for params:  0.004044220146536827
+Test error for minimum validation error:  0.003978876499831676
+Params finished:  [350, 0.001, 10]
+Minimum validation error for params:  0.0044676387041807175
+Test error for minimum validation error:  0.0044086527116596694
+Params finished:  [350, 0.001, 100]
+Minimum validation error for params:  0.005032618662714958
+Test error for minimum validation error:  0.0043429573386907575
+Params finished:  [350, 0.001, 500]
+Minimum validation error for params:  0.00557701421380043
+Test error for minimum validation error:  0.004738624747097492
+Params finished:  [350, 0.001, 1000]
+Minimum validation error for params:  0.005397175502777099
+Test error for minimum validation error:  0.004722894987463951
+Params finished:  [350, 0.01, 10]
+Minimum validation error for params:  0.005516745185852051
+Test error for minimum validation error:  0.0051967473328113556
+Params finished:  [350, 0.01, 100]
+Minimum validation error for params:  0.004788541224598885
+Test error for minimum validation error:  0.004259754970669746
+Params finished:  [350, 0.01, 500]
+Minimum validation error for params:  0.00565806690454483
+Test error for minimum validation error:  0.005123472914099693
+Params finished:  [350, 0.01, 1000]
+Minimum validation error for params:  0.006121148556470871
+Test error for minimum validation error:  0.005923882709443569
+Params finished:  [350, 0.1, 10]
+Minimum validation error for params:  0.00585965690612793
+Test error for minimum validation error:  0.0050248018622398374
+Params finished:  [350, 0.1, 100]
+Minimum validation error for params:  0.0064281332939863205
+Test error for minimum validation error:  0.00554291393905878
+Params finished:  [350, 0.1, 500]
+Minimum validation error for params:  0.00698561335504055
+Test error for minimum validation error:  0.006242880091071129
+Params finished:  [350, 0.1, 1000]
+Minimum validation error for params:  0.006551876226067543
+Test error for minimum validation error:  0.006800106580555439
+Params finished:  [400, 0.001, 10]
+Minimum validation error for params:  0.007106923830509186
+Test error for minimum validation error:  0.006848371833562851
+Params finished:  [400, 0.001, 100]
+Minimum validation error for params:  0.007517723679542542
+Test error for minimum validation error:  0.00661367897093296
+Params finished:  [400, 0.001, 500]
+Minimum validation error for params:  0.007449900305271148
+Test error for minimum validation error:  0.006980777265131474
+Params finished:  [400, 0.001, 1000]
+Minimum validation error for params:  0.006741003447771073
+Test error for minimum validation error:  0.0067984709352254865
+Params finished:  [400, 0.01, 10]
+Minimum validation error for params:  0.0066801412463188175
+Test error for minimum validation error:  0.007434558625519276
+Params finished:  [400, 0.01, 100]
+Minimum validation error for params:  0.006746940314769745
+Test error for minimum validation error:  0.006792178231477737
+Params finished:  [400, 0.01, 500]
+Minimum validation error for params:  0.0081317234903574
+Test error for minimum validation error:  0.00709449684470892
+Params finished:  [400, 0.01, 1000]
+Minimum validation error for params:  0.008355830609798432
+Test error for minimum validation error:  0.0073396769970655446
+Params finished:  [400, 0.1, 10]
+Minimum validation error for params:  0.007281613278388977
+Test error for minimum validation error:  0.008064353486895562
+Params finished:  [400, 0.1, 100]
+Minimum validation error for params:  0.008688323640823364
+Test error for minimum validation error:  0.008991447462141514
+Params finished:  [400, 0.1, 500]
+Minimum validation error for params:  0.008094858717918397
+Test error for minimum validation error:  0.007681851515173912
+Params finished:  [400, 0.1, 1000]
+Minimum validation error for params:  0.008881315439939499
+Test error for minimum validation error:  0.008861695291101932
