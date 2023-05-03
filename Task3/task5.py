@@ -13,7 +13,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 input_size = 784
 hidden_size = 500
 num_classes = 10
-num_epochs = 5
+num_epochs = 20
 batch_size = 100
 learning_rate = 0.001
 
@@ -61,8 +61,9 @@ class NeuralNet(nn.Module):
     def forward(self, x):
         out = self.fc1(x)
         out = self.relu(out)
+        hidden = out.clone()  # new line to store hidden features
         out = self.fc2(out)
-        return out
+        return out, hidden  # return both the output and hidden features
 
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
 
@@ -77,7 +78,7 @@ for epoch in range(num_epochs):
         images = images.reshape(-1, input_size).to(device)
         labels = labels.to(device)
 
-        outputs = model(images)
+        outputs,_ = model(images)
         loss = criterion(outputs, labels)
 
         optimizer.zero_grad()
@@ -87,51 +88,79 @@ for epoch in range(num_epochs):
 
     print('Epoch [{}/{}]'.format(epoch+1, num_epochs))
 
+#print accuracy:
+correct = 0
+total = 0
+for images, labels in test_loader:
+    images = images.reshape(-1, input_size).to(device)
+    labels = labels.to(device)
+    outputs,_ = model(images)
+    _, predicted = torch.max(outputs.data, 1)
+    total += labels.size(0)
 
-# Let zi = σ(W (1)T xi + b(1)) represent the hidden features of the image xi, obtained from applying the first layer on the input. Attach to your report a plot with the 2D embedding of zi using tSNE, for all zi in the train set. Each 2D point should be colored based on its label:
+    correct += (predicted == labels).sum().item()
+
+print('Accuracy of the network on the 10000 test images: {} %'.format(100 * correct / total))
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Get the hidden features of the train set
+from sklearn.manifold import TSNE
+# Get hidden features and original images for all train set
 hidden_features = []
-saved_labels = []
-for i, (images, labels) in enumerate(train_loader):
-    images = images.reshape(-1, input_size).to(device)
-    labels = labels.to(device)
-    saved_labels.append(labels)
-    outputs = model(images)
-    hidden_features.append(outputs.detach().numpy())
-
+original_images = []
+labels = []
+with torch.no_grad():
+    for images, lbls in train_loader:
+        images = images.reshape(-1, input_size).to(device)
+        lbls = lbls.to(device)
+        _, hidden = model(images)
+        hidden_features.append(hidden.cpu().numpy())
+        original_images.append(images.cpu().numpy())
+        labels.append(lbls.cpu().numpy())
 hidden_features = np.concatenate(hidden_features, axis=0)
+original_images = np.concatenate(original_images, axis=0)
+labels = np.concatenate(labels, axis=0)
 
-# Apply tSNE
-tsne = TSNE(n_components=2, random_state=0)
-print("before tsne fit transform")
+# Plot t-SNE embeddings of hidden features
+tsne = TSNE(n_components=2, random_state=42)
+hidden_features_embedded = tsne.fit_transform(hidden_features)
 
-X_2d = tsne.fit_transform(hidden_features)
-
-print("after tsne fit transform")
-print(X_2d)
-
-# Create a list of colors based on the labels
-labels = saved_labels
-palette = sns.color_palette('bright', len(set(labels)))
-colors = [palette[label] for label in labels]
-
-
-plt.figure(figsize=(8, 8))
-#scatter with colors:
-sns.scatterplot(X_2d[:, 0], X_2d[:, 1], hue=labels, palette=palette, legend='full')
-# plt.scatter(X_2d[:, 0], X_2d[:, 1], s=10, c=colors)
-
-plt.title('tSNE Visualization')
-plt.xlabel('tSNE Component 1')
-plt.ylabel('tSNE Component 2')
-
-
+# Plot z_i
+fig, ax = plt.subplots(figsize=(10, 10))
+scatter = ax.scatter(hidden_features_embedded[:, 0], hidden_features_embedded[:, 1], c=labels)
+ax.set_title('t-SNE Embedding of Hidden Features')
+legend1 = ax.legend(*scatter.legend_elements(),
+                    loc="lower left", title="Classes")
+ax.add_artist(legend1)
 plt.show()
 
 
-# Save the model checkpoint
-# torch.save(model.state_dict(), 'model.ckpt')
+# Get hidden features and original images for all train set
+hidden_features = []
+original_images = []
+labels = []
+with torch.no_grad():
+    for images, lbls in train_loader:
+        images = images.reshape(-1, input_size).to(device)
+        lbls = lbls.to(device)
+        _, hidden = model(images)
+        hidden_features.append(hidden.cpu().numpy())
+        original_images.append(images.cpu().numpy())
+        labels.append(lbls.cpu().numpy())
+hidden_features = np.concatenate(hidden_features, axis=0)
+original_images = np.concatenate(original_images, axis=0)
+labels = np.concatenate(labels, axis=0)
+
+# Plot x_i
+fig, ax = plt.subplots(nrows=2, ncols=5, figsize=(10, 6),
+                       gridspec_kw={'wspace': 0.05, 'hspace': 0.05},
+                       sharex=True, sharey=True)
+ax = ax.flatten()
+for i in range(10):
+    img = original_images[labels == i][0].reshape(28, 28)
+    ax[i].imshow(img, cmap='gray', interpolation='nearest')
+    ax[i].set_title(str(i))
+    ax[i].axis('off')
+plt.suptitle('Sample images from the MNIST dataset')
+plt.show()
